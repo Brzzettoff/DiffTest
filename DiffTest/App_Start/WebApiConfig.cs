@@ -16,7 +16,7 @@ namespace DiffTest
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "v1/diff/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }

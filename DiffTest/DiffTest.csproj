@@ -164,7 +164,6 @@
     <Compile Include="Controllers\DiffController.cs" />
     <Compile Include="Controllers\DiffLogics.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -12,7 +11,16 @@ namespace DiffTest.Controllers
     public class DiffController : ApiController
     {
 
-        // GET example v1/diff/1
+
+        /* calling GET + id returns:
+         * if left or right were not set: 404 NotFound
+         * if left and right are same: 200 OK, "Equals"
+         * if different sizes: 200 OK,  "SizeDoNotMatch"
+         * if same sizes and different data: 200 OK, "ContentDoNotMatch" + offsets & lengths
+         * ---------------------------------
+         * GET example v1/diff/1 
+         */
+        
         [Route("v1/diff/{id}")]
         public object Get(string id)
         {
@@ -31,8 +39,17 @@ namespace DiffTest.Controllers
             return CompareInputs(inputToFindLeft.data, inputToFindRight.data);
         }
 
-        //PUT example v1/diff/1/left
-        //body {data:"AAAAAA=="}
+        /* PUT / id / side 
+         * + data in body
+         * sets data and returns:
+         * if data is not a B64 value: BadRequest
+         * if data is null: BadRequest
+         * if data with id and side exists, replaces data on id position, returns: OK
+         * else: returns OK
+         * -----------------------
+         * PUT example v1/diff/1/left
+         * body {data:"AAAAAA=="}
+         */
         [Route("v1/diff/{id}/{sideLR}")]
         public HttpResponseMessage Put(string id, string sideLR, [FromBody]DataInput input)
         {
@@ -51,7 +68,7 @@ namespace DiffTest.Controllers
             }
             else if (new[] { "left", "right" }.Contains(sideLR.ToString()))
             {
-                AddOrReplaceInList(input, id, sideLR.ToString());
+                AddOrReplaceInDictionary(input, id, sideLR.ToString());
             }
             else
             {

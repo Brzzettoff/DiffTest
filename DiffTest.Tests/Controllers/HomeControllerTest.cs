@@ -1,6 +1,5 @@
 ﻿using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DiffTest;
 using DiffTest.Controllers;
 
 namespace DiffTest.Tests.Controllers

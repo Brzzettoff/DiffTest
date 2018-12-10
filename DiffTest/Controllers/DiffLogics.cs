@@ -13,22 +13,23 @@ namespace DiffTest.Controllers
             //public string id;
             public string data;
         }
-
         public static Dictionary<string, DataInput> dataInputsLeft = new Dictionary<string, DataInput>();
         public static Dictionary<string, DataInput> dataInputsRight = new Dictionary<string, DataInput>();
 
-        public static void AddOrReplaceInList(DataInput input, string id, string side)
+
+        /*selfexplanatory*/
+        public static void AddOrReplaceInDictionary(DataInput input, string id, string side)
         {
 
-            Dictionary<string, DataInput> currList = (side == "left") ? dataInputsLeft : dataInputsRight;
+            Dictionary<string, DataInput> currDict = (side == "left") ? dataInputsLeft : dataInputsRight;
             {
-                if (currList.ContainsKey(id))
+                if (currDict.ContainsKey(id))
                 {
-                    currList[id] = input;
+                    currDict[id] = input;
                 }
                 else
                 {
-                    currList.Add(id, input);
+                    currDict.Add(id, input);
                 }
 
             }
@@ -54,7 +55,8 @@ namespace DiffTest.Controllers
 
         }
 
-
+        /* returns result type & optional list of diffs*/
+        //TODO Tadej: dej še kej dopisat
         public static ReturnResult CompareInputs(string inputLeft, string inputRight)
         {
 
