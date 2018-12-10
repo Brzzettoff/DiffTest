@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiffTest", "DiffTest\DiffTest.csproj", "{0906C0F0-744E-4BE0-9637-7A7FC41D24DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiffTest.Tests", "DiffTest.Tests\DiffTest.Tests.csproj", "{E35B8429-4062-470D-A8C2-A9EC7BE315A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0906C0F0-744E-4BE0-9637-7A7FC41D24DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0906C0F0-744E-4BE0-9637-7A7FC41D24DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0906C0F0-744E-4BE0-9637-7A7FC41D24DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0906C0F0-744E-4BE0-9637-7A7FC41D24DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E35B8429-4062-470D-A8C2-A9EC7BE315A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E35B8429-4062-470D-A8C2-A9EC7BE315A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E35B8429-4062-470D-A8C2-A9EC7BE315A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E35B8429-4062-470D-A8C2-A9EC7BE315A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27143766-2D0B-429D-9D00-F8D8C0CB8BE3}
+	EndGlobalSection
+EndGlobal
