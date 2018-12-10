@@ -20,7 +20,6 @@ namespace DiffTest.Controllers
          * ---------------------------------
          * GET example v1/diff/1 
          */
-        
         [Route("v1/diff/{id}")]
         public object Get(string id)
         {
