@@ -9,8 +9,6 @@ namespace DiffTest.Controllers
     {
         public class DataInput
         {
-            //TODO Tadej: I can delete this one. CHECK IT before!!! changed Lists to Dictionaries
-            //public string id;
             public string data;
         }
         public static Dictionary<string, DataInput> dataInputsLeft = new Dictionary<string, DataInput>();
@@ -103,6 +101,16 @@ namespace DiffTest.Controllers
                         length++;
                     }
                 }
+
+                //diff on the end is not returned in the loop above
+                if (length != 0) {
+                    DiffResult diff = new DiffResult
+                    {
+                        offset = offset,
+                        length = length
+                    };
+                    diffResults.Add(diff);
+                } 
 
                 returnRes.diffResultType = "ContentDoNotMatch";
                 returnRes.diffs = diffResults;

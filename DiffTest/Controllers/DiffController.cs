@@ -23,7 +23,7 @@ namespace DiffTest.Controllers
         [Route("v1/diff/{id}")]
         public object Get(string id)
         {
-            //TODO Tadej: I can delete this. CHECK IT before!!! changed Lists to Dictionaries
+
             //DataInput inputToFindLeft = dataInputsLeft.Find(x => x.id == id); 
             //DataInput inputToFindRight = dataInputsRight.Find(x => x.id == id);
             DataInput inputToFindLeft = new DataInput();
@@ -58,7 +58,7 @@ namespace DiffTest.Controllers
             }
             catch (Exception)
             {
-                return Request.CreateResponse(HttpStatusCode.BadRequest);
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Not a B64 data");
             }
 
             if (input.data == null)
